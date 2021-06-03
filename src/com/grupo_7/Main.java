@@ -1,4 +1,4 @@
-package com.grupo_7;
+﻿package com.grupo_7;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -96,6 +96,7 @@ public class Main {
             // hacer una lectura comoda (disponer del metodo readLine()).
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
+ 
 
             String content = "";
             String linea;
