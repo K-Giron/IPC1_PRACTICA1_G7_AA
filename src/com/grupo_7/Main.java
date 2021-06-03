@@ -1,5 +1,8 @@
 package com.grupo_7;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -74,6 +77,46 @@ public class Main {
                     startMenu();
         }
         startMenu();
+    }
+
+    public static String getContentOfFile() {
+
+        System.out.println("Ingrese la dirección del archivo.");
+        File archivo = new File(menu.nextLine());
+        FileReader fr = null;
+        BufferedReader br = null;
+
+        try {
+            // Apertura del fichero y creacion de BufferedReader para poder
+            // hacer una lectura comoda (disponer del metodo readLine()).
+            fr = new FileReader(archivo);
+            br = new BufferedReader(fr);
+
+
+            String content = "";
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                content += linea + "\n";
+            }
+            System.out.println("\n" +  content);
+            return content;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // En el finally cerramos el fichero, para asegurarnos
+            // que se cierra tanto si todo va bien como si salta
+            // una excepcion.
+            try {
+                if (null != fr) {
+                    fr.close();
+                }
+            } catch (Exception e2) {
+                e2.printStackTrace();
+            }
+        }
+
+        return "";
     }
 
 
