@@ -1,4 +1,4 @@
-package com.grupo_7;
+﻿package com.grupo_7;
 
 import java.io.IOException;
 import java.util.Scanner;
@@ -10,6 +10,7 @@ public class Main {
 	// write your code here
         startMenu();
             }
+
         public static void startMenu() throws IOException {
             String menu_opciones = "";
 
